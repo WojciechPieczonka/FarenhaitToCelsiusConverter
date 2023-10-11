@@ -13,13 +13,13 @@ const swap = () => {
 	if (one.textContent === '°C') {
 		one.textContent = '°F';
 		two.textContent = '°C';
+		result.textContent = '';
 	} else {
 		one.textContent = '°C';
 		two.textContent = '°F';
+		result.textContent = '';
 	}
 };
-
-changeBtn.addEventListener('click', swap);
 
 const farToCel = () => {
 	farenheit = converter.value * 1.8 + 32;
@@ -46,4 +46,11 @@ const conversion = () => {
 	}
 };
 
+const reset = () => {
+	converter.value = '';
+	result.textContent = '';
+};
+
+changeBtn.addEventListener('click', swap);
 convertBtn.addEventListener('click', conversion);
+resetBtn.addEventListener('click', reset);
